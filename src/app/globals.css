@@ -1,9 +1,14 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+--bg:#EFE5E5;
+--fg:#3A3A3A;
+--dk:#2E2E2E;
 }
+
+
 
 @theme inline {
   --color-background: var(--background);
@@ -19,8 +24,27 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html,body {height: 100%; }
+
+body{ background:var(--bg); color:var(--fg); }
+.container-px{ @apply px-4 sm:px-6 lg:px-8; }
+.section{ @apply container-px max-w-6xl mx-auto py-14 sm:py-20; }
+.kicker{ @apply tracking-[0.2em] text-sm ; }
+.h1{ @apply font-serif text-5xl sm:text-6xl tracking-wide font-bold; }
+.h2{ @apply tracking-[0.1em] font-serif text-4xl sm:text-5xl font-bold; }
+.p{ @apply text-sm sm:text-base leading-loose; }
+.btn{ @apply inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium shadow-card transition hover:opacity-90 font-serif; }
+.btn-primary{ @apply bg-[rgba(58,58,58,0.92)] text-white font-serif; }
+.btn-ghost{ @apply bg-white/90 text-[var(--fg)] border border-black/10; }
+img{ display: block; }
+.custom-object{ object-position: 50% 80%;}
+
+/* src/app/globals.css のどこかに追加 */
+@keyframes scrollX {
+from { transform: translateX(0); }
+to { transform: translateX(-50%); } /* コンテンツを2回並べるため半分まで */
 }
+.marquee {
+animation: scrollX 30s linear infinite;
+}
+.marquee:hover { animation-play-state: paused; } /* ホバーで一時停止 */
