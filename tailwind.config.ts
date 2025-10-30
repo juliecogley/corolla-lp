@@ -1,7 +1,11 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
- content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+ content: [
+'./src/app/**/*.{ts,tsx,mdx}',
+'./src/components/**/*.{ts,tsx}',
+"./src/**/*.{js,ts,jsx,tsx,mdx}"],
+
  theme: {
  extend: {
  colors: {
@@ -11,6 +15,17 @@ const config: Config = {
  dark: "#2E2E2E",
  },
  },
+keyframes: {
+marquee: {
+'0%': { transform: 'translateX(0)' },
+'100%': { transform: 'translateX(-50%)' },
+},
+},
+animation: {
+marquee: 'marquee 30s linear infinite',
+},
+
+
  fontFamily: {
 serif: ["Times New Roman", "Times", "serif"],
 sans: ["var(--font-noto)", "Noto Sans JP", "sans-serif"],

@@ -1,35 +1,38 @@
-import Image from "next/image";
+'use client';
 
-const IMGS = [
- "/images/top-img1.jpeg",
- "/images/top-img2.jpeg",
- "/images/top-img3.jpeg",
- "/images/top-img4.jpeg",
- "/images/top-img1.jpeg",
- "/images/top-img1.jpeg",
- ];
- 
+import Image from 'next/image';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+
+const IMGS = ['/images/Group 25.svg'];
+
 export default function CircleSlider() {
-// 横並びを無限に見せるために2回分並べる
-const list = [...IMGS, ...IMGS];
+ const [emblaRef] = useEmblaCarousel(
+ { loop: true, align: 'start', containScroll: 'trimSnaps' },
+ [Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })]
+ );
 
-return (
-<div className="overflow-hidden select-none">
-<div className="marquee flex gap-6">
-{list.map((src, i) => (
-<div key={i} className="relative w-40 h-40 sm:w-52 sm:h-52 shrink-0">
-<Image
-src={src}
-alt=""
-fill
-className="rounded-full object-cover object-center border-2"
-style={{ borderColor: "#3A3A3A" }} /* 枠色 #3A3A3A */
-sizes="(max-width: 768px) 160px, 208px"
-priority={i < 3}
-/>
-</div>
-))}
-</div>
-</div>
-);
+ return (
+ <section className="py-6">
+ <div ref={emblaRef} className="overflow-hidden">
+ {/* ← ここが Grid。flex は使っていません */}
+ <div className="grid grid-flow-col auto-cols-[100%] gap-4">
+ {IMGS.map((src, i) => (
+ <div key={i} className="grid place-items-center py-4">
+ <div className="aspect-square w-[280px] sm:w-[320px] rounded-full overflow-hidden border-2 border-[#3a3a3a]">
+ <Image
+ src={src}
+ alt=""
+ width={800}
+ height={800}
+ className="w-full h-full object-cover"
+ priority={i < 3}
+ />
+ </div>
+ </div>
+ ))}
+ </div>
+ </div>
+ </section>
+ );
 }

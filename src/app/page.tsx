@@ -24,17 +24,18 @@ export default function Page() {
 return (
 <main>
 <Header />
-<section>
-{/* スライダー */}
-<CircleSlider />
-{/* ここにキャッチコピーやボタンが来るなら続けて配置 */}
-{/* ... */}
+<section className="mx-auto pb-14 sm:pb-20"><CircleSlider /></section>
+<section className="section text-center">
+<h1 className="h1 font-serif racking-[.25em]">“やさしい”花束を。</h1>
+<p className="mt-8 opacity-90 text-sm sm:text-base leading-[2.5] sm:leading-[3] tracking-[.25rem] font-medium">
+品質に問題がなくても規格外等の理由で廃棄されるロスフラワー。<br />
+Corollaではロスフラワーで作ったブーケを販売しています。
+  </p>
+  <div className="mt-8">
+<a href="#" className="btn btn-primary">ONLINE SHOP</a>
+</div>
 </section>
-
-{/* 以下、MISSION / ABOUT / ... */}
-
- {/* =========== Mission (Dark) =========== */}
- <section id="mission" className="pt-14 sm:pt-20 pb-0 bg-[var(--dk)] text-white text-center">
+ <section id="mission" className="pb-0 bg-[var(--dk)] text-white text-center">
  <div className="section">
  <div className="mb-4">
  <h2 className="h2 mt-2 font-serif">MISSION</h2>

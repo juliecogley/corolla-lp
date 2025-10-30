@@ -1,10 +1,11 @@
 import Image from "next/image";
+const MENUS =["MISSION","ABOUT","VOICE","BOUQUETS","FAQ"];
 
 export default function Header() {
 return (
-<header className="section" style={{ justifyItems: "center" }}>
-{/* ロゴ画像（中央にドーン） */}
-<div className=" mx-auto flex justify-center items-center min-h-screen">
+<header className="section" style={{ justifyItems:"center"}}>
+
+<div className="mx-auto flex" style={{paddingBottom: "1rem"}}>
 <Image
 src="/images/logotype-b.svg" // public/images/logo.svg
 alt="Corolla ロゴ"
@@ -15,16 +16,15 @@ priority
 />
 </div>
 
-{/* メニュー */}
-<nav className="px-4 sm:px-6 lg:px-8 py-14 font-serif flex justify-center gap-6 sm:gap-14 text-sm sm:text-lg lg:text-xl ">
-{["MISSION","ABOUT","VOICE","BOUQUETS","FAQ"].map((s) => (
-<a
-key={s}
-href={`#${s.toLowerCase()}`}
-className="leading-none tracking-wide hover:opacity-70 transition-opacity duration-200 ">
-{s}
-</a>
+<nav className="font-serif ">
+<ul className="flex flex-wrap justify-center gap-4 sm:gap-8 md:gap-12 lg:gap-24 text-sm sm:text-lg lg:text-xl tracking-widest">
+{MENUS.map((s) => ( 
+<li key={s}>
+<a href={`#${s.toLowerCase()}`}
+className="hover:opacity-70 transition-opacity duration-200">{s}</a>
+</li>
 ))}
+</ul>
 </nav>
 </header>
 );
