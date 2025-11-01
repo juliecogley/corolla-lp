@@ -15,7 +15,7 @@ const products: Product[] = [
 
 const voices: Voice[] = [
  { id:"v1", quote:"やさしい色味で部屋が明るくなりました。", date:"2025.04.04", name:"30代・女性", img:"/images/voice-img1.jpeg"},
- { id:"v2", quote:"ロスフラワーを使ったブーケ。気軽に楽しめます！", date:"2025.05.18", name:"40代・男性", img:"/images/voice-img2.jpeg"},
+ { id:"v2", quote:"ロスフラワーを気軽に楽しめます！", date:"2025.05.18", name:"40代・男性", img:"/images/voice-img2.jpeg"},
  { id:"v3", quote:"おしゃれで写真映えも抜群！", date:"2025.06.20", name:"20代・女性", img:"/images/voice-img3.jpeg"},
 ];
 
@@ -24,24 +24,25 @@ export default function Page() {
 return (
 <main>
 <Header />
-<section className="mx-auto pb-14 sm:pb-20"><CircleSlider /></section>
-<section className="section text-center">
-<h1 className="h1 font-serif racking-[.25em]">“やさしい”花束を。</h1>
-<p className="mt-8 opacity-90 text-sm sm:text-base leading-[2.5] sm:leading-[3] tracking-[.25rem] font-medium">
+<section className="mx-auto"><CircleSlider /></section>
+
+<section className="section">
+<h1 className="h1">「やさしい花束を。」</h1>
+<p className="description">
 品質に問題がなくても規格外等の理由で廃棄されるロスフラワー。<br />
 Corollaではロスフラワーで作ったブーケを販売しています。
-  </p>
-  <div className="mt-8">
+</p>
+<div className="mt-8">
 <a href="#" className="btn btn-primary">ONLINE SHOP</a>
 </div>
 </section>
- <section id="mission" className="pb-0 bg-[var(--dk)] text-white text-center">
+
+
+ <section id="mission" className="pb-0 bg-[var(--dk)] text-brand-pink">
  <div className="section">
- <div className="mb-4">
- <h2 className="h2 mt-2 font-serif">MISSION</h2>
- <p className="opacity-80 kicker font-serif">Corollaのミッション</p>
- </div>
- <p className="opacity-90 text-sm sm:text-base leading-[2.5] sm:leading-[3]">
+ <h2 className="h2">MISSION</h2>
+ <p className="kicker">Corollaのミッション</p>
+ <p className="description">
 「ロスフラワーで明日を豊かに」。<br/>これは、わたしたちの重要なミッションです。<br/>
  廃棄されるはずのロスフラワーから<br/>
  環境にも人にもやさしい花束を生み出し、多くの人の心を癒す。<br/>
@@ -50,7 +51,7 @@ Corollaではロスフラワーで作ったブーケを販売しています。
  </div>
 {/*下に横幅いっぱいの画像 */}
 <Image
-src="/images/mission-img.jpeg" // public/images/mission.jpg に保存しておく
+src="/images/mission-img.jpeg"
 alt="MISSIONイメージ"
 width={1920}
 height={800}
@@ -59,12 +60,11 @@ priority
 />
  </section>
 
- {/* =========== About (3カラム) =========== */}
+
  <section id="about" className="section">
- <div className="mb-4 text-center">
- <h2 className="h2 mt-2 font-serif">ABOUT</h2>
- <p className="opacity-80 kicker font-serif">Corollaのブーケについて</p>
- </div>
+ <h2 className="h2">ABOUT</h2>
+ <p className="kicker">Corollaのブーケについて</p>
+
  <div className="grid sm:grid-cols-3 gap-6">
  {[
  {img:"/images/about-img1.jpeg",title:"環境にやさしい",desc:"ロスフラワーを商品に活用することで、花の大量廃棄を防いでCO2を削減。環境への負荷を軽減します。"},
@@ -75,8 +75,8 @@ priority
  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-4 leading-none">
  <Image src={f.img} alt="" fill sizes="(max-width:768px) 100vw, 360px" className="object-cover block"/>
  </div>
- <h3 className="font-medium mb-1 text-center">{f.title}</h3>
- <p className="p text-sm">{f.desc}</p>
+ <h3 className="h3">{f.title}</h3>
+ <p className="p-s">{f.desc}</p>
  </article>
  ))}
  </div>
@@ -91,12 +91,10 @@ className="w-full h-80 sm:h-[30rem] object-cover"
 priority
 />
 
- {/* =========== Voice =========== */}
+
  <section id="voice" className="section">
- <div className="mb-4 text-center">
- <h2 className="h2 mt-2 font-serif">VOICE</h2>
- <p className="opacity-80 kicker font-serif">利用者様の声</p>
- </div>
+ <h2 className="h2">VOICE</h2>
+ <p className="kicker">利用者様の声</p>
  <div className="grid sm:grid-cols-3 gap-6">
  {voices.map(v=>(
  <figure key={v.id} className="bg-white rounded-3xl shadow-card p-5">
@@ -106,26 +104,25 @@ priority
  height={300}
  className="w-full h-full object-cover"/>
  </div>
- <blockquote className="p mb-2">“{v.quote}”</blockquote>
- <figcaption className="text-xs opacity-70 flex gap-4 mt-2">
+  <figcaption className="text-xs opacity-70 flex gap-4 mt-2">
   <span>{v.date}</span>
   <span>{v.name}</span>
   </figcaption>
+ <blockquote className="p mb-2 text-left">{v.quote}</blockquote>
+
  </figure>
  ))}
  </div>
  </section>
 
- {/* =========== Bouquets (丸カード) =========== */}
- <section id="bouquets" className="section text-center">
-<div className="mb-4">
-<h2 className="h2 font-serif">BOUQUETS</h2>
-<p className="opacity-80 kicker font-serif">販売中のブーケ</p>
-</div>
 
+ <section id="bouquets" className="section">
+
+<h2 className="h2">BOUQUETS</h2>
+<p className="kicker">販売中のブーケ</p>
 <div className="grid sm:grid-cols-3 gap-8">
 {products.map((p, i) => (
-<div key={i} className="text-center">
+<div key={i} >
 {/* 丸画像 */}
 <div className="relative w-60 h-60 mx-auto mb-4">
 <Image
@@ -136,26 +133,22 @@ className="object-cover object-top rounded-full border-4 border-brand-text custo
 />
 </div>
 {/* テキスト */}
-<h3 className="font-medium">{p.name}</h3>
-<p className="text-sm opacity-80">{p.price}</p>
+<h3 className="h3">{p.name}</h3>
+<p className="p">{p.price}</p>
 </div>
 ))}
 </div>
-
-{/* 下にボタン */}
 <div className="mt-8">
 <a href="#" className="btn btn-primary">VIEW MORE</a>
 </div>
 </section>
 
- {/* =========== FAQ (Dark) =========== */}
- <section id="faq" className="py-14 sm:py-20 bg-[var(--dk)] text-white text-center">
- <div className="section">
-  <div className="mb-4">
-<h2 className="h2 mt-2 font-serif">FAQ</h2>
-<p className="opacity-80 kicker font-serif">よくあるご質問
+
+<section id="faq" className="bg-[var(--dk)] text-brand-pink">
+<div className="section">
+<h2 className="h2">FAQ</h2>
+<p className="kicker">よくあるご質問
 </p>
-</div>
  <ul className="space-y-5">
  {[
  {q:"ロスフラワーって何？",a:"市場に出ず余剰となった花を指します。品質管理のうえ使用します。"},
@@ -163,15 +156,15 @@ className="object-cover object-top rounded-full border-4 border-brand-text custo
  {q:"品質保証制度はありますか？",a:"商品に不備がある場合は商品到着後から4日以内にご連絡ください。全額返金対応します。"},
  ].map((f,i)=>(
  <li key={i} className="bg-white/5 rounded-2xl p-5">
- <p className="font-medium mb-1">{f.q}</p>
- <p className="opacity-80 text-sm leading-relaxed">{f.a}</p>
+ <p className="font-medium mb-4 underline decoration-[1px] underline-offset-4">{f.q}</p>
+ <p className="p-s">{f.a}</p>
  </li>
  ))}
  </ul>
- <a href="#bouquets" className="btn btn-ghost mt-8">ONLINE SHOP</a>
- </div>
- </section>
-{/*下に横幅いっぱいの画像 */}
+ <div className="mt-8">
+<a href="#" className="btn btn-ghost">ONLINE SHOP</a>
+</div>
+</div>
 <Image
 src="/images/faq-img.jpeg" 
 alt="FAQイメージ"
@@ -180,6 +173,7 @@ height={800}
 className="w-full h-80 sm:h-[30rem] object-cover block object-bottom"
 priority
 />
+</section>
 <Footer />
  </main>
  );

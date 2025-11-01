@@ -28,7 +28,7 @@ marquee: 'marquee 30s linear infinite',
 
  fontFamily: {
 serif: ["Times New Roman", "Times", "serif"],
-sans: ["var(--font-noto)", "Noto Sans JP", "sans-serif"],
+sans: ["Zen Kaku Gothic New", "Noto Sans JP", "sans-serif"],
 },
  boxShadow: {
  card: "0 6px 24px rgba(0,0,0,.08)",
