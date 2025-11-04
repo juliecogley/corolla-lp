@@ -29,6 +29,7 @@ html,body {height: 100%; }
 body{ background:var(--bg); color:var(--fg); }
 .container-px{ @apply px-4 sm:px-6 lg:px-8; }
 .section{ @apply text-center container-px max-w-6xl mx-auto py-16 sm:py-24; }
+.header-section{ @apply text-center container-px max-w-6xl mx-auto py-12 sm:py-16; }
 .kicker{ @apply tracking-[0.3em] text-sm font-serif font-bold mb-6 sm:mb-8; }
 .h1{ @apply font-serif text-4xl sm:text-6xl tracking-wide sm:tracking-[0.25em] font-bold; }
 .h2{ @apply tracking-[0.15em] font-serif text-4xl sm:text-5xl font-bold mb-2 font-serif; }

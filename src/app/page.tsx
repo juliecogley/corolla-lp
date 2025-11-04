@@ -24,7 +24,7 @@ export default function Page() {
 return (
 <main>
 <Header />
-<section className="mx-auto"><CircleSlider /></section>
+<CircleSlider />
 
 <section className="section">
 <h1 className="h1">「やさしい花束を。」</h1>
@@ -38,7 +38,7 @@ Corollaではロスフラワーで作ったブーケを販売しています。
 </section>
 
 
- <section id="mission" className="pb-0 bg-[var(--dk)] text-brand-pink">
+ <section id="mission" className="pb-0 bg-[var(--dk)] text-brand-pink rounded-t-[60px] sm:rounded-t-[80px] lg:rounded-t-[110px] overflow-hidden">
  <div className="section">
  <h2 className="h2">MISSION</h2>
  <p className="kicker">Corollaのミッション</p>
@@ -144,7 +144,7 @@ className="object-cover object-top rounded-full border-4 border-brand-text custo
 </section>
 
 
-<section id="faq" className="bg-[var(--dk)] text-brand-pink">
+<section id="faq" className="bg-[var(--dk)] text-brand-pink  rounded-t-[60px] sm:rounded-t-[80px] lg:rounded-t-[110px] overflow-hidden">
 <div className="section">
 <h2 className="h2">FAQ</h2>
 <p className="kicker">よくあるご質問

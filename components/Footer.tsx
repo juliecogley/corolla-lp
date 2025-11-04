@@ -31,9 +31,9 @@ priority
 <Image 
 src="/images/logomark-w.svg" 
 alt="logomark" 
-width={150} 
-height={150} 
-className="block" 
+width={136} 
+height={136} 
+className="block mx-auto h-auto w-16 sm:w-20 md:w-24 lg:w-28 xl:w-32 " 
 priority
 />
 </div>

@@ -3,7 +3,7 @@ const MENUS =["MISSION","ABOUT","VOICE","BOUQUETS","FAQ"];
 
 export default function Header() {
 return (
-<header className="section" style={{ justifyItems:"center"}}>
+<header className="header-section" style={{ justifyItems:"center"}}>
 
 <div className="mx-auto flex object-center" style={{paddingBottom: "1.5rem"}}>
 <Image
