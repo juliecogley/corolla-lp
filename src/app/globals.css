@@ -31,12 +31,12 @@ body{ background:var(--bg); color:var(--fg); }
 .section{ @apply text-center container-px max-w-6xl mx-auto py-16 sm:py-24; }
 .header-section{ @apply text-center container-px max-w-6xl mx-auto py-12 sm:py-16; }
 .kicker{ @apply tracking-[0.3em] text-sm font-serif font-bold mb-6 sm:mb-8; }
-.h1{ @apply font-serif text-4xl sm:text-6xl tracking-wide sm:tracking-[0.25em] font-bold; }
+.h1{ @apply font-serif text-3xl sm:text-6xl tracking-[0.1em] sm:tracking-[0.25em] font-bold; }
 .h2{ @apply tracking-[0.15em] font-serif text-4xl sm:text-5xl font-bold mb-2 font-serif; }
 .h3{ @apply mb-1 text-center font-serif font-bold; }
 .p{ @apply text-sm sm:text-base leading-loose; }
 .p-s{ @apply text-xs sm:text-sm leading-loose; }
-.description{ @apply text-sm sm:text-base leading-[2.5] sm:leading-[3] tracking-[0.15rem] sm:tracking-[0.25rem] font-medium mt-8 opacity-90 ; }
+.description{ @apply text-sm sm:text-base leading-[2.5] sm:leading-[3] tracking-[0.15rem] sm:tracking-[0.25rem] font-medium mt-6 opacity-90 ; }
 .btn{ @apply inline-flex items-center justify-center rounded-full px-20 py-3 text-sm font-medium shadow-card transition hover:opacity-90 font-serif font-bold tracking-[0.25em]; }
 .btn-primary{ @apply bg-[rgba(58,58,58)] text-brand-pink font-serif font-bold tracking-[0.25em]; }
 .btn-ghost{ @apply bg-[rgba(239,229,229)] text-[var(--fg)] border border-black/10; }
@@ -47,7 +47,29 @@ img{ display: block; }
 .span{@apply text-brand-pink text-xs sm:text-sm font-normal leading-[2.5] sm:leading-[3] tracking-wide justify-center gap-4 sm:gap-8 md:gap-12 lg:gap-24;}
 
 
-@keyframes marquee {
-from { transform: translateX(0); }
-to { transform: translateX(-50%); } /* 画像を2倍並べているので -50% で継ぎ目なし */
+@keyframes char-in {
+from { opacity: 0; transform: translateY(0.4em); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-char {
+opacity: 0;
+animation: char-in 1.5s ease forwards;
+animation-delay: calc(var(--d) * 100ms);
+}
+
+@keyframes fade-in {
+from {
+opacity: 0;
+transform: translateY(20px); /* 下から少し浮かぶ */
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.animate-fade {
+opacity: 0;
+animation: fade-in 1s ease-out forwards;
 }

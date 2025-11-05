@@ -26,7 +26,7 @@ export default function CircleSlider() {
  <div style={{display:"flex",gap:24}}>
  {[IMGS, ...IMGS, ...IMGS, ...IMGS, ...IMGS, ...IMGS, ...IMGS].map((src, i) => (
  <div key={i} style={{flex:"0 0 auto",minWidth:0}}>
- <div style={{width:"440px" , height:"440px" ,margin:"0 16px"}}
+ <div style={{width:"375px" , height:"375px" ,margin:"0 16px"}}
  className="overflow-hidden">
  <Image
  src={src}
@@ -36,6 +36,7 @@ export default function CircleSlider() {
  className="w-full h-full object-cover"
  priority={i < 3}
  />
+
  </div>
  </div>
  

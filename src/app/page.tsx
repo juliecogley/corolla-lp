@@ -3,6 +3,7 @@ import Image from "next/image";
 import Header from "../../components/Header";
 import CircleSlider from "../../components/CircleSlider";
 import Footer from "../../components/Footer";
+import { CharByChar } from "../../components/CharByChar";
 
 type Product = { id:string; name:string; price:string; img:string; };
 type Voice = { id:string; quote:string; date:string; name:string; img:string; };
@@ -27,7 +28,7 @@ return (
 <CircleSlider />
 
 <section className="section">
-<h1 className="h1">「やさしい花束を。」</h1>
+<CharByChar text="「やさしい花束を。」" className="h1" />
 <p className="description">
 品質に問題がなくても規格外等の理由で廃棄されるロスフラワー。<br />
 Corollaではロスフラワーで作ったブーケを販売しています。
@@ -40,7 +41,7 @@ Corollaではロスフラワーで作ったブーケを販売しています。
 
  <section id="mission" className="pb-0 bg-[var(--dk)] text-brand-pink rounded-t-[60px] sm:rounded-t-[80px] lg:rounded-t-[110px] overflow-hidden">
  <div className="section">
- <h2 className="h2">MISSION</h2>
+ <CharByChar text="MISSION" className="h2" />
  <p className="kicker">Corollaのミッション</p>
  <p className="description">
 「ロスフラワーで明日を豊かに」。<br/>これは、わたしたちの重要なミッションです。<br/>
@@ -62,7 +63,7 @@ priority
 
 
  <section id="about" className="section">
- <h2 className="h2">ABOUT</h2>
+ <CharByChar text="ABOUT" className="h2" />
  <p className="kicker">Corollaのブーケについて</p>
 
  <div className="grid sm:grid-cols-3 gap-6">
@@ -73,7 +74,7 @@ priority
  ].map((f,i)=>(
  <article key={i} className="bg-white rounded-3xl shadow-card p-5">
  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-4 leading-none">
- <Image src={f.img} alt="" fill sizes="(max-width:768px) 100vw, 360px" className="object-cover block"/>
+ <Image src={f.img} alt="" fill sizes="(max-width:768px) 100vw, 360px" className="object-cover block animate-fade"/>
  </div>
  <h3 className="h3">{f.title}</h3>
  <p className="p-s">{f.desc}</p>
@@ -81,6 +82,7 @@ priority
  ))}
  </div>
  </section>
+
 {/*下に横幅いっぱいの画像 */}
 <Image
 src="/images/about-img4.jpeg"
@@ -93,12 +95,12 @@ priority
 
 
  <section id="voice" className="section">
- <h2 className="h2">VOICE</h2>
+ <CharByChar text="VOICE" className="h2" />
  <p className="kicker">利用者様の声</p>
  <div className="grid sm:grid-cols-3 gap-6">
  {voices.map(v=>(
  <figure key={v.id} className="bg-white rounded-3xl shadow-card p-5">
- <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-4">
+ <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-4  animate-fade">
  <Image src={v.img} alt="" 
  width={400}
  height={300}
@@ -117,8 +119,7 @@ priority
 
 
  <section id="bouquets" className="section">
-
-<h2 className="h2">BOUQUETS</h2>
+ <CharByChar text="BOUQUETS" className="h2" />
 <p className="kicker">販売中のブーケ</p>
 <div className="grid sm:grid-cols-3 gap-8">
 {products.map((p, i) => (
@@ -129,10 +130,9 @@ priority
 src={p.img}
 alt={p.name}
 fill
-className="object-cover object-top rounded-full border-4 border-brand-text custom-object"
-/>
+className="object-cover object-top rounded-full border-4 border-brand-text custom-object animate-fade"/>
 </div>
-{/* テキスト */}
+
 <h3 className="h3">{p.name}</h3>
 <p className="p">{p.price}</p>
 </div>
@@ -146,7 +146,7 @@ className="object-cover object-top rounded-full border-4 border-brand-text custo
 
 <section id="faq" className="bg-[var(--dk)] text-brand-pink  rounded-t-[60px] sm:rounded-t-[80px] lg:rounded-t-[110px] overflow-hidden">
 <div className="section">
-<h2 className="h2">FAQ</h2>
+ <CharByChar text="FAQ" className="h2" />
 <p className="kicker">よくあるご質問
 </p>
  <ul className="space-y-5">
