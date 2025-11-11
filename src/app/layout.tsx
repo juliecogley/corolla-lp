@@ -25,7 +25,7 @@ type:"website",
 twitter:{
 card:"summary_large_image",
 images:[ "/ogp-img.svg"],   
-}
+},
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
