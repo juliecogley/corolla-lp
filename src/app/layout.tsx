@@ -16,15 +16,16 @@ metadataBase: new URL("https://corolla-lp.vercel.app/"),
 openGraph:{
 title:"Corolla",
 description: "ロスフラワーから作ったやさしいブーケをお届けします。",
-url:"https://corolla-lp.vercel.app/",
 siteName:"Corolla",
-images:[{url: "/ogp-img.svg", width: 1200, height:630 }],
 locale:"ja_JP",
 type:"website",
+images:[
+{url: "/images/ogp-img.jpg", width: 1200, height:630, alt:"Corola OGP" }
+],
 },
 twitter:{
 card:"summary_large_image",
-images:[ "/ogp-img.svg"],   
+images:[ "/images/ogp-img.jpg"],   
 },
 };
 
